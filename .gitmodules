@@ -1,0 +1,4 @@
+[submodule "aerial_sim_ros2/ROS-TCP-Endpoint"]
+	path = aerial_sim_ros2/ROS-TCP-Endpoint
+	url = https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+	branch = main-ros2

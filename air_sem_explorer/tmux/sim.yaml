@@ -1,0 +1,69 @@
+session_name: air_sem_explorer
+
+# environment:
+
+options:
+  default-command: /bin/bash
+
+environment:
+  WS: $AIR_SEM_EXPLORER_WS
+
+windows:
+- window_name: sim
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - source ${WS}/install/setup.bash
+    - export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+  panes:
+    - ros2 run rmw_zenoh_cpp rmw_zenohd
+    - sleep 1; ros2 launch unity_interface endpoint.launch.py
+    - sleep 1; ros2 launch unity_interface sim.launch.py
+    - sleep 1; ros2 run tf2_ros static_transform_publisher 0 0 0 0.0 0.0 0.0 world map
+
+- window_name: Mapper
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - source ${WS}/install/setup.bash
+    - export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+  panes:
+    - sleep 8; ros2 launch air_sem_explorer mapper_sim_with_vis.launch.py
+    - sleep 8; ros2 launch air_sem_gridmap sem_gridmap.launch.py
+
+- window_name: Planner
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - source ${WS}/install/setup.bash
+    - export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+  panes:
+    - sleep 5; ros2 launch air_sem_explorer planner.launch.py
+
+- window_name: Tracker
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - source ${WS}/install/setup.bash
+    - export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+  panes:
+    - sleep 5; ros2 launch air_sem_explorer sim_tracker.launch.py
+
+- window_name: Trigger
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - source ${WS}/install/setup.bash
+    - export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+  panes:
+    - shell_command:
+      - cmd: "ros2 topic pub -1 /state_machine/trigger std_msgs/Bool '{data: true}'"
+        enter: false
+
+- window_name: kill
+  focus: false
+  layout: tiled
+  panes:
+    - shell_command:
+      - cmd: "tmux kill-session -t air_sem_explorer"
+        enter: false

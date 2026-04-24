@@ -1,0 +1,17 @@
+tf_handler_node:
+  ros__parameters:
+    # Set this to false if we want to simply use the same world frame
+    # If True, the first odom pose will be set as the map origin
+    set_first_pose: true 
+    use_odom_msg: false
+    odom_topic: '/quadrotor/pose'
+    output_topic: '/pose_map'
+    map_frame: 'map'
+    world_frame: 'world' # The frame id of world (could be utm frame id if use GPS)
+    
+    # If in GPS mode, tf handler will do change of frames while retaining the yaw
+    # as in GPS convention the yaw is aligned with the y axis
+    # Note: in GPS node, as frame will be messed up, we don't publish static TF anymore
+    gps_mode: false
+    # If filter_yaw, we also assume first orientation is at zero yaw. all subsequent yaw is relative to this
+    filter_yaw: false

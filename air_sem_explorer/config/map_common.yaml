@@ -1,0 +1,9 @@
+# Common params used for map, will be loaded inside node (not ros launch)
+depth_scale: 1000.0
+# Note: on robot with GPS, we follow ENU, x is East, y is North
+map_min_x: -30.0
+map_max_x: 230.0
+map_min_y: -270.0
+map_max_y: 30.0
+resolution: 1.0
+use_odom_msg: false

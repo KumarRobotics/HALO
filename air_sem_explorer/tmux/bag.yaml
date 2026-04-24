@@ -1,0 +1,31 @@
+session_name: air_sem_explorer
+
+# environment:
+
+options:
+  default-command: /bin/bash
+
+environment:
+  WS: $AIR_SEM_EXPLORER_WS
+
+windows:
+- window_name: Mapper
+  focus: true
+  layout: tiled
+  shell_command_before:
+    - source ${WS}/install/setup.bash
+    - export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+  panes:
+    - sleep 5; ros2 launch air_sem_explorer mapper_robot.launch.py
+    - sleep 5; ros2 launch air_sem_gridmap sem_gridmap_robot.launch.py
+    - sleep 5; ros2 launch vggt_mapper vggt_mapper_robot.launch.py
+    - sleep 5; ros2 launch air_sem_gridmap task_interface.launch.py
+    # - sleep 1; ros2 run tf2_ros static_transform_publisher 0 0 0 0.0 0.0 0.0 world map
+
+- window_name: kill
+  focus: false
+  layout: tiled
+  panes:
+    - shell_command:
+      - cmd: "tmux kill-session -t air_sem_explorer"
+        enter: false

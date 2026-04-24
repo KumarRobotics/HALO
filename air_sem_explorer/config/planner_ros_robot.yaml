@@ -1,0 +1,28 @@
+planner_node:
+  ros__parameters:
+    relevancy_map_topic: "/relevancy_map"
+    frontier_topic: "/occ_map/frontiers"
+    odom_topic: "/pose_map"
+    region_size: 25.0
+    global_replan_thres: 10.0
+    local_replan_thres: 5.0
+    global_relevancy_thres: 0.3
+    retrieval_thres: 0.8
+    ftr_relevancy_thres: 0.15
+
+    # Deprecated
+    # If sim is true, GPS waypoint not published
+    sim: false
+    # Now the planner is not differentiate GPS convention
+    # It follows ROS convention and leave GPS conversion to TF handler
+    
+    # For robot initialization
+    robot_initialization: true
+    init_waypoints_x: 0.0
+    init_waypoints_y: 20.0
+    init_timeout: 20.0
+    goal_x: [57.0, 58.0, 28.0]
+    goal_y: [-65.5, -172.0, -97.0]
+    goal_tol: [30.0, 30.0, 30.0]
+    enable_goal: false
+    log_path: " "

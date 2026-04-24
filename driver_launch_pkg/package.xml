@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>driver_launch_pkg</name>
+  <version>0.1.0</version>
+  <description>Driver launch</description>
+  <maintainer email="dexterong94@gmail.com">Dexter Ong</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package> 

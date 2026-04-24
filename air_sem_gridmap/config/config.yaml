@@ -1,0 +1,19 @@
+# config for sem_gridmap
+input_resolution: [640, 480]  # (width, height)
+feature_dim: 1152
+pointcloud_downsample_voxel_size: 1.0  # meters
+default_text_prompt:
+  - somewhere with a car accident
+  - building
+  - grass
+
+publish_relevancy_viz: true # relevancy visualization
+publish_feature_viz: false # feature visualization
+publish_pointcloud: false # whether to accumulate and publish the rgb pointcloud
+num_positive_classes: 1 # number of classes to consider as positive (foreground)
+
+publish_viz_at_offset: false
+feature_viz_height: -15.0 # offset from highest point in map
+relevancy_viz_height: -15.0 # offset from highest point in map
+
+enable_reset_map: true  # enable the reset map subscriber

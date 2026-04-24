@@ -1,0 +1,11 @@
+mapper_node:
+  ros__parameters:
+    depth_topic: '/quadrotor/depth/image'
+    odom_topic: '/quadrotor/pose'
+    intrinsics_topic: '/quadrotor/depth/info'
+    img_interval: 0.5  # seconds
+    frontier_size_min: 3.0
+    frontier_size_max: 5.0
+    clear_close_frontiers: false
+    clear_distance: 3.0  # meters
+    clear_frontier_odom_topic: '/clear_odom'

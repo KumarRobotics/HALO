@@ -1,0 +1,3 @@
+[submodule "VGGT-SLAM"]
+	path = VGGT-SLAM
+	url = git@github.com:ongdexter/VGGT-SLAM.git

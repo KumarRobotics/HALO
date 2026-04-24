@@ -1,0 +1,11 @@
+mapper_node:
+  ros__parameters:
+    depth_topic: '/vggt_mapper/depth/image'
+    odom_topic: '/vggt_mapper/pose'
+    intrinsics_topic: '/vggt_mapper/camera_info'
+    img_interval: 0.5  # seconds
+    frontier_size_min: 3.0
+    frontier_size_max: 5.0
+    clear_close_frontiers: true
+    clear_distance: 5.0  # meters
+    clear_frontier_odom_topic: "/pose_map"

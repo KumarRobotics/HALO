@@ -1,0 +1,21 @@
+# VGGT Mapper configuration file
+use_sim: true
+sim_image_topic: /quadrotor/color/image
+sim_pose_topic: /pose_map
+image_topic: /zed/zed_node/rgb/image_rect_color
+pose_topic: /pose_map
+use_external_poses: true
+pose_sync_tolerance: 0.02
+image_distance: 2.0
+submap_size: 3
+overlapping_window_size: 3
+enable_icp: true
+enable_loop_closure: false
+enable_gps_prior: true
+loop_distance: 20.0
+loop_id_threshold: 4
+max_loops: 5
+conf_threshold: 25.0
+use_point_map: false
+use_sim3: true
+ptcloud_viz_resolution: 0.5

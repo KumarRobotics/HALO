@@ -1,0 +1,9 @@
+environment: PolyCityScene # 'PolyCityScene, PennovationScene, ForestScene, FloodedGroundsScene'
+startPosition:
+  x: 0.0
+  y: 0.0
+  z: 40.0
+startOrientation:
+  roll: 0.0
+  pitch: 0.0
+  yaw: 0.0

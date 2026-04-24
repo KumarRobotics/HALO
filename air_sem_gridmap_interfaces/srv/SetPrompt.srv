@@ -1,0 +1,5 @@
+string task_prompt
+uint8 task_id
+---
+bool success
+string message 
