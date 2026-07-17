@@ -162,10 +162,14 @@ We thank the authors of the following repositories for their open-source code:
 If you find our paper or code useful, please consider citing:
 
 ```bibtex
-@article{tao2025halo,
-  title={HALO: High-Altitude Language-Conditioned Monocular Aerial Exploration and Navigation},
-  author={Tao, Yuezhan and Ong, Dexter and Cladera, Fernando and Hughes, Jason and Taylor, Camillo J and Chaudhari, Pratik and Kumar, Vijay},
-  journal={arXiv preprint arXiv:2511.17497},
-  year={2025}
+@article{11513994,
+  author={Tao, Yuezhan and Ong, Dexter and Cladera, Fernando and Hughes, Jason and Taylor, Camillo J. and Chaudhari, Pratik and Kumar, Vijay},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={HALO: Language-Conditioned Overhead Monocular Aerial Exploration and Navigation}, 
+  year={2026},
+  volume={11},
+  number={7},
+  pages={8204-8211},
+  doi={10.1109/LRA.2026.3692052}
 }
 ```
